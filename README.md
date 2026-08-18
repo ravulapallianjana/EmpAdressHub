@@ -1,62 +1,3 @@
-[Employee-Address Microservices
-
-A Spring Boot Microservices project designed to manage employee and address information using independent RESTful services. The project demonstrates service-to-service communication, CRUD operations, Spring Data JPA, MySQL integration, and a layered backend architecture.
-
-🚀 Project Overview
-
-The application consists of two independent microservices:
-
-Employee Service – Manages employee information.
-Address Service – Manages employee address information.
-
-The Employee Service communicates with the Address Service through REST APIs to retrieve the corresponding address details.
-
-🏗️ Architecture
-                         ┌──────────────────┐
-                         │      Client      │
-                         │ Postman / Browser│
-                         └────────┬─────────┘
-                                  │
-                                  │ REST API
-                                  ▼
-                    ┌─────────────────────────┐
-                    │    Employee Service     │
-                    │      Spring Boot        │
-                    │                         │
-                    │ Controller              │
-                    │ Service                 │
-                    │ Repository              │
-                    │ Entity                  │
-                    └────────────┬────────────┘
-                                 │
-                                 │ REST API
-                                 ▼
-                    ┌─────────────────────────┐
-                    │    Address Service      │
-                    │      Spring Boot        │
-                    │                         │
-                    │ Controller              │
-                    │ Service                 │
-                    │ Repository              │
-                    │ Entity                  │
-                    └────────────┬────────────┘
-                                 │
-                                 ▼
-                           ┌──────────┐
-                           │  MySQL   │
-                           └──────────┘
-🛠️ Technologies Used
-Technology	Purpose
-Java	Backend programming
-Spring Boot	Microservices development
-Spring Data JPA	Database operations
-Hibernate	ORM
-REST API	Service communication
-MySQL	Database
-Maven	Dependency management
-Postman	API testing
-Git & GitHub	Version control
-Eclipse IDE	Development
 📦 Microservices
 1. Employee Service
 
@@ -92,7 +33,6 @@ Layered architecture
 Repository pattern
 Configuration using application.properties
 API testing using Postman
-📂 Project Structure
 EmpAddressHub/
 │
 ├── AddressService/
@@ -145,7 +85,6 @@ EmpAddressHub/
 The Employee Service communicates with the Address Service using a REST API.
 
 For example:
-
 Client
   |
   | Request Employee
@@ -163,7 +102,6 @@ Employee Service
   | Combined Response
   ↓
 Client
-
 This demonstrates how independent Spring Boot services can communicate with each other.
 
 🗄️ Database
@@ -173,7 +111,6 @@ The application uses MySQL for persistent data storage.
 Each service can maintain its own database/table structure according to its responsibility.
 
 Example:
-
 Employee Database
 -----------------
 Employee
@@ -182,33 +119,24 @@ Employee
 - email
 - salary
 - addressId
-Address Database
+- Address Database
 ----------------
 Address
 - id
 - city
 - state
-
-Database names, table names, and columns can be modified according to the configuration used in the project.
-
-⚙️ Configuration
+- Database names, table names, and columns can be modified according to the configuration used in the project.
+- ⚙️ Configuration
 
 Database and service configuration is maintained in:
-
 src/main/resources/application.properties
-
 Example configuration:
-
 spring.datasource.url=jdbc:mysql://localhost:3306/your_database
 spring.datasource.username=your_username
 spring.datasource.password=your_password
 
-
 spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
-
-Note: Do not commit real database passwords, API keys, or other sensitive credentials to GitHub. Use environment variables or local configuration for secrets.
-
 ▶️ How to Run the Project
 Prerequisites
 
@@ -302,8 +230,3 @@ EmpAddressHub
 📄 License
 
 This project is created for educational and portfolio purposes.
-
-
-
-**Tip:** In your actual GitHub README, replace the generic API examples with your **exact Employee and Address controller endpoints**. That will make the project look much stronger in interviews.
-](https://github.com/ravulapallianjana)
